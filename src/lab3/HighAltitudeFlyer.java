@@ -2,7 +2,7 @@
 package lab3;
 
 
-public interface HighAltitudeFlyabe {
+public interface HighAltitudeFlyer {
     
     public abstract void setAlititudeTraining(boolean value);
     

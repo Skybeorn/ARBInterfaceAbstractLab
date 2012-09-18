@@ -6,9 +6,6 @@ public class AdvancedJavaCourse extends SchoolCourse {
 
     private double COURSE_CREDITS = 4;
     private String COURSE_CREDITS_ERR_MSG = "Error: credits must be 4.0";
-    private String PREEQUSITE_COURSE = "Intro to Java";
-    private String PREEQUSITE_COURSE_ERR_MSG = "Error: prerequisites cannot "
-            + "be null of empty string";
     private String courseName;
     private String courseNumber;
     private boolean prerequisites;

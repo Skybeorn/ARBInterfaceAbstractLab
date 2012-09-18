@@ -2,7 +2,7 @@
 package lab3;
 
 
-public class FSixteenPilot extends Pilot implements HighAltitudeFlyabe {
+public class FSixteenPilot extends Pilot implements HighAltitudeFlyer {
 
 
     public void setAlititudeTraining(boolean value) {

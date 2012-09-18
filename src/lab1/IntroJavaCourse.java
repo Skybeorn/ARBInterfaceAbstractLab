@@ -7,29 +7,17 @@ public class IntroJavaCourse extends SchoolCourse {
     private double COURSE_CREDITS = 4;
     private String COURSE_CREDITS_ERR_MSG = "Error: credits must be between"
             + " .5 and 4.0";
-    private String PREEQUSITE_COURSE = "None";
-    private String PREEQUSITE_COURSE_ERR_MSG = "Error: prerequisites cannot "
-            + "be null of empty string";
     private String courseName;
     private String courseNumber;
-    private String prerequisites;
+    private boolean prerequisites;
 
     public IntroJavaCourse(String courseName, String courseNumber) {
         setCourseName(courseName);
         setCourseNum(courseNumber);
     }
 
-    public String getPrerequisites() {
+    public boolean getPrerequisites() {
         return prerequisites;
-    }
-
-    public void setPrerequisites(String prerequisites) {
-        if (prerequisites == null || prerequisites.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    PREEQUSITE_COURSE_ERR_MSG);
-            System.exit(0);
-        }
-        this.prerequisites = prerequisites;
     }
 
     public void setCredits(double credits) {
@@ -59,8 +47,6 @@ public class IntroJavaCourse extends SchoolCourse {
 
     @Override
     public void setPrequisites(boolean t) {
-        if (t = false) {
-            throw new IllegalArgumentException(PREEQUSITE_COURSE);
-        }
+        this.prerequisites = t;
     }
 }
