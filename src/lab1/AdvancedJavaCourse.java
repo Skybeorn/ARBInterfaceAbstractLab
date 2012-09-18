@@ -5,8 +5,7 @@ import javax.swing.JOptionPane;
 public class AdvancedJavaCourse extends SchoolCourse {
 
     private double COURSE_CREDITS = 4;
-    private String COURSE_CREDITS_ERR_MSG = "Error: credits must be in the "
-            + "range 0.5 to 4.0";
+    private String COURSE_CREDITS_ERR_MSG = "Error: credits must be 4.0";
     private String PREEQUSITE_COURSE = "Intro to Java";
     private String PREEQUSITE_COURSE_ERR_MSG = "Error: prerequisites cannot "
             + "be null of empty string";
@@ -15,8 +14,8 @@ public class AdvancedJavaCourse extends SchoolCourse {
     private String prerequisites;
 
     public AdvancedJavaCourse(String courseName, String courseNumber) {
-        this.setCourseName(courseName);
-        this.setCourseNum(courseNumber);
+        setCourseName(courseName);
+        setCourseNum(courseNumber);
     }
 
     public String getCapitalizedCourseName() {

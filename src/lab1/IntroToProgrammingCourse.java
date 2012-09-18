@@ -3,46 +3,49 @@ package lab1;
 import javax.swing.JOptionPane;
 
 /**
- * Describe responsibilities here. NOTE: this class has NO PREREQUISITES!
- * Do not change this fact.
+ * Describe responsibilities here. NOTE: this class has NO PREREQUISITES! Do not
+ * change this fact.
  *
- * @author      your name goes here
- * @version     1.00
+ * @author your name goes here
+ * @version 1.00
  */
-public class IntroToProgrammingCourse {
+public class IntroToProgrammingCourse extends SchoolCourse {
+
+    private double COURSE_CREDITS = 4;
+    private String COURSE_CREDITS_ERR_MSG = "Error: credits must be between"
+            + " .5 and 4.0";
+    private String PREEQUSITE_COURSE = "None";
+    private String PREEQUSITE_COURSE_ERR_MSG = "Error: prerequisites cannot "
+            + "be null of empty string";
     private String courseName;
     private String courseNumber;
-    private double credits;
+    private String prerequisites;
 
     public IntroToProgrammingCourse(String courseName, String courseNumber) {
-        this.setCourseName(courseName);
-        this.setCourseNumber(courseNumber);
+        setCourseNum(courseNumber);
+        setCourseNum(courseNumber);
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
+    public String getPrerequisites() {
+        return prerequisites;
     }
 
-    public final void setCourseNumber(String courseNumber) {
-        if(courseNumber == null || courseNumber.length() == 0) {
+    public void setPrerequisites(String prerequisites) {
+        if (prerequisites == null || prerequisites.length() == 0) {
             JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
+                    PREEQUSITE_COURSE_ERR_MSG);
             System.exit(0);
         }
-        this.courseNumber = courseNumber;
-    }
-
-    public double getCredits() {
-        return credits;
+        this.prerequisites = prerequisites;
     }
 
     public void setCredits(double credits) {
-        if(credits < 0.5 || credits > 4.0) {
+        if (credits != COURSE_CREDITS) {
             JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
+                    COURSE_CREDITS_ERR_MSG);
             System.exit(0);
         }
-        this.credits = credits;
+        this.setCredits(credits);
     }
 
     public String getCourseName() {
@@ -50,13 +53,21 @@ public class IntroToProgrammingCourse {
     }
 
     public final void setCourseName(String courseName) {
-        if(courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
-        }
         this.courseName = courseName;
     }
 
-    
+    public String getCourseNum() {
+        return courseNumber;
+    }
+
+    public final void setCourseNum(String courseNumber) {
+        this.courseNumber = courseNumber;
+    }
+
+    @Override
+    public void hasPrequisites(boolean t) {
+        if (t = false) {
+            throw new IllegalArgumentException(PREEQUSITE_COURSE);
+        }
+    }
 }
