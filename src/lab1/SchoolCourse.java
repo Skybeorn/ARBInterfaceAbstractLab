@@ -11,7 +11,7 @@ public abstract class SchoolCourse {
 
     public abstract void setCredits(double credits);
     
-    public abstract void hasPrequisites(boolean t);
+    public abstract void setPrequisites(boolean value);
 
     public int getCredits() {
         return credits;

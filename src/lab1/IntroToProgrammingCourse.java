@@ -65,7 +65,7 @@ public class IntroToProgrammingCourse extends SchoolCourse {
     }
 
     @Override
-    public void hasPrequisites(boolean t) {
+    public void setPrequisites(boolean t) {
         if (t = false) {
             throw new IllegalArgumentException(PREEQUSITE_COURSE);
         }
