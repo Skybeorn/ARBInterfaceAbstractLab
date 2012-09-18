@@ -11,7 +11,7 @@ public class AdvancedJavaCourse extends SchoolCourse {
             + "be null of empty string";
     private String courseName;
     private String courseNumber;
-    private String prerequisites;
+    private boolean prerequisites;
 
     public AdvancedJavaCourse(String courseName, String courseNumber) {
         setCourseName(courseName);
@@ -22,17 +22,8 @@ public class AdvancedJavaCourse extends SchoolCourse {
         return this.getCourseName().toUpperCase();
     }
 
-    public String getPrerequisites() {
+    public boolean getPrerequisites() {
         return prerequisites;
-    }
-
-    public void setPrerequisites(String prerequisites) {
-        if (prerequisites == null || prerequisites.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    PREEQUSITE_COURSE_ERR_MSG);
-            System.exit(0);
-        }
-        this.prerequisites = prerequisites;
     }
 
     @Override
@@ -63,8 +54,6 @@ public class AdvancedJavaCourse extends SchoolCourse {
 
     @Override
     public void setPrequisites(boolean t) {
-        if (t = false) {
-            throw new IllegalArgumentException(PREEQUSITE_COURSE);
-        }
+        this.prerequisites = t;
     }
 }
